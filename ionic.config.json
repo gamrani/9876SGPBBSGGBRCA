@@ -1,0 +1,8 @@
+{
+  "name": "SmartGuid",
+  "app_id": "a85d7fdc",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

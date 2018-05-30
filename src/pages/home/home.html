@@ -1,0 +1,19 @@
+<ion-content class="tutorial-page">
+
+  <ion-slides pager>
+    <ion-slide *ngFor="let slide of slides">
+     
+      <img [src]="slide.image" class="slide-image"/>
+      <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+      <p [innerHTML]="slide.description"></p>
+    </ion-slide>
+    <ion-slide>
+      <br><br><br>
+      <img src="assets/imgs/vacation.png" class="slide-image"/>
+      <button ion-button icon-end color="dark" outline round (click)="submit()">
+        Prés à découvrir le Maroc <ion-icon ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
+      </button>
+
+    </ion-slide>
+  </ion-slides>
+</ion-content>
