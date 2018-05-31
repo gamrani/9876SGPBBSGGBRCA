@@ -1,18 +1,24 @@
-<!--
-  Generated template for the FormPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>form</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
+<ion-content class="form-page" padding>
+  
+  <ion-card *ngFor="let card of cards">
+    <img [src]="card.image"/>
+    <ion-card-content>
+      <ion-card-title>
+       {{card.title}}
+        </ion-card-title>
+      <p>
+       {{card.description}}
+      </p>
+      <br>
+      
+      
+      <ion-icon ios="ios-heart-outline" md="md-heart-outline" color="primary" (click)="like(card.title)" *ngIf="!card.liked"> Like &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-icon>
+      <ion-icon ios="ios-heart" md="md-heart"  color="danger" (click)="dislike(card.title)" *ngIf="card.liked"> Liked &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-icon>
+      <ion-icon ios="ios-albums" md="md-albums" color = "primary" (click)="discover(card.title)"> Discover</ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <ion-icon ios="ios-share" md="md-share" color = "primary"> Share </ion-icon>
+      <br><br>
+      <ion-icon ios="ios-add-circle" md="md-add-circle" color = "primary"> Add {{card.title}}'s pictures</ion-icon>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

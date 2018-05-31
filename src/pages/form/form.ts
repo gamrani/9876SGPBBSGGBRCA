@@ -18,8 +18,43 @@ export class FormPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FormPage');
+  cards = [
+    {
+      title: "Casablanca",
+      description: "Etes-vous confus à <br/><b>Choisir un endroit à visiter ? </b><br/><b>Plannifier votre voyage ? </b> <br/> vous étes dans le meilleur endroit <br/>",
+      image: "assets/imgs/casablanca.jpg",
+      liked : true
+    },
+    {
+      title: "Rabat",
+      description: "<b>Smart Planner</b> </br> Visitez les meilleurs endroits au Maroc visuellement pour choisir votre destination et plannifier votre séjour",
+      image: "assets/imgs/rabat.jpg",
+      liked: false
+    },
+    {
+      title: "Marrakech",
+      description: "<b>Smart Planner</b> </br> Visitez les meilleurs endroits au Maroc visuellement pour choisir votre destination et plannifier votre séjour",
+      image: "assets/imgs/marrakech.jpg",
+      liked:true
+    }
+];
+
+discover(title){
+  alert(title);
+}
+like(title){
+  for (var i = 0; i < this.cards.length; i++) { 
+    if(this.cards[i].title==title) {
+      this.cards[i].liked=true;
+    }
   }
+}
+dislike(title){
+  for (var i = 0; i < this.cards.length; i++) { 
+    if(this.cards[i].title==title) {
+     this.cards[i].liked=false;
+    }
+  }
+}
 
 }
